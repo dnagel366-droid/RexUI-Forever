@@ -1,0 +1,6 @@
+LibStub
+Credits: Kaelten, Cladhaire, ckknight, Mikk, Ammo, Nevcairiel
+Website: https://www.wowace.com/projects/libstub
+
+LibStub is hereby placed in the Public Domain.
+Credits: Kaelten, Cladhaire, ckknight, Mikk, Ammo, Nevcairiel

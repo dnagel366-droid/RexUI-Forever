@@ -1,0 +1,519 @@
+RexUI Eternal 4.6.6
+- Profile: Ein fremdes Profil aktivieren übernimmt das gespeicherte ActionBar-Layout dieses Profils, nicht den Spec-Rest des eingeloggten Charakters.
+- ActionBars (Forever): Spells ohne Wut/Energie/Mana werden wieder grau dargestellt.
+
+RexUI 4.6.5
+- Namensplaketten: Execute-Glow und Execute-Linie gelten für alle Spezialisierungen und bleiben in Instanzen sichtbar.
+- Paket: Innere RexUI_Nameplates.zip entfernt; Nameplates liegen nur noch als normale Addon-Dateien.
+- Namensplaketten: Kompakte Lebenspunkte, Prozent oder beide Reihenfolgen auswählbar; Anzeige funktioniert auch mit geschützten Kampfwerten.
+- Namensplaketten: Blizzard-Aura-Container ohne verbotene Sichtbarkeitsabfragen; Zielpfeile verwenden geschützte Layout-Holder nach dem Referenzverfahren.
+- Namensplaketten: Roter Aggro-Rand verwendet den vorhandenen Rahmen und unterstützt geschützte Bedrohungswerte.
+- Namensplaketten: Auswahl zwischen einfachen und doppelten Zielpfeilen ergänzt.
+- Einstellungen: Tabs Darstellung sowie Ziel & Bedrohung neu und kollisionsfrei ausgerichtet.
+- Paket: Doppelte Nameplate-Medien entfernt; alle Grafiken werden zentral aus RexUI\media\nameplates geladen.
+
+RexUI 4.6
+- Stabilität: Einheitlicher Modul-Lebenszyklus mit Event-Tracking; BuffReminders, Cooldown-Manager, Schadensmeter, Gildenschlüssel, M+ Timer und Blizzard-Skin melden beim Deaktivieren alle Events und Ticker ab. Cooldown-Manager-Skin wird beim Abschalten wieder entfernt.
+- Performance: /rexperf liefert echte Messwerte (Start/Stop-API ohne Allokation, Pool-Gauges) aus ActionBars, Namensplaketten, Schadensmeter, Gruppenframes, Minimap und Buff-Erinnerungen.
+- Namensplaketten: Core in zehn Dateien zerlegt (Init, Constants, Core, Threat, Auras, Castbar, Indicators, BlizzardPlates, ClickGeometry, Slash); Standardwerte kommen nur noch aus dem Datenbankschema.
+- Namensplaketten: Delta-Verarbeitung für UNIT_AURA, einstellbare Maximalzahl für Schwächungs-/Stärkungszauber und Kontrolleffekte, Rahmen nach Bannbarkeit, Cast-Spark, Execute-Linie.
+- Namensplaketten: getrennte Regeln für freundliche Spieler und NPCs (nur Name, Klassenfarben, Click-through, Y-Versatz), Fokus-Größe und -Rahmen, Mouseover-Hervorhebung mit eigenen Farben.
+- ActionBars: freie Sichtbarkeits- und Paging-Bedingungen mit Syntaxprüfung, neue Presets (Kampf oder Ziel, Nur in Gruppe, Nur solo), Paging pro Spezialisierung.
+- ActionBars: Buttonbreite/-höhe, Wachstumsrichtung, Frame-Level, Click-through, leere Buttons, Button-Hintergrund, Text-Layer für Hotkey/Stapel/Makrotext (Größe, Kontur, Farbe, Position, Versatz), Benutzbarkeitsfarben, Global-Fade-Bedingungen und Verzögerung.
+- ActionBars: Layout-Presets, Rückgängig (20 Schritte), einfache/erweiterte Ansicht; Kopieren übernimmt jetzt auch geerbte Standardwerte.
+- Teilprofile: Export und Import einzelner Abschnitte (Actionbars, Namensplaketten, Unitframes, Gruppenframes, Farben, Minimap, Taschen, Chat, Kampf-Tools); Import erkennt Teilprofile automatisch.
+- Installationsassistent: geführte Einrichtung mit Rolle, Actionbar-Layout und empfohlenen Spieleinstellungen beim ersten Start; jederzeit über /rexui install.
+- Datenpanels: bis zu drei frei platzierbare Panels mit 1–5 Datentext-Slots, unabhängig von der Minimap (Minimap → Datenpanels).
+- Lokalisierung: rund 130 fehlende englische Übersetzungen ergänzt; verbliebene direkte Texte laufen über LocalizeText.
+- Paket: UTF-8-BOMs entfernt, Lizenzdateien für alle eingebetteten Bibliotheken sowie LICENSES.md ergänzt, Nameplate-Fallbacks im Editor an das Datenbankschema angeglichen.
+- Profile: aktives Profil zuerst, übrige Profile alphabetisch sortiert und übersichtlich ausgerichtet.
+- Start und Installation: externe Addon-Empfehlungen entfernt, Bilddarstellung korrigiert und gewählte Rolle sowie Layout zuverlässig angewendet.
+- ActionBars: direkte Klickreaktion; Pet-Fähigkeiten auf normalen Leisten bleiben beim Kampfbeginn hell und benutzbar.
+- PetBar: Pet-Slot-Zuordnung korrigiert; Fähigkeiten wie Spott werden pro Klick nur einmal ausgelöst und aktivierter Autocast durch einen animierten Rahmen angezeigt.
+- Fehlerbehebungen: Rekursion beim Schadensmeter-Profilwechsel und Lua-Fehler in den erweiterten ActionBar-Einstellungen behoben.
+- Datenleiste unter der Minimap auf drei einstellbare Slots vereinfacht.
+
+RexUI 4.5.5
+- Buff-Erinnerungen: Flask- und Essen-Erkennung auf Midnight (12.x) aktualisiert; die Anzeige bleibt nicht mehr dauerhaft stehen, obwohl Flask und Essen aktiv sind.
+- Buff-Erinnerungen: Essen wird zusätzlich über den Aura-Namen ("Gut gesättigt" / "Herzhaft") erkannt, damit auch neue Gerichte ohne Datenupdate zählen.
+- Buff-Erinnerungen: Klassenbuffs (Mal der Wildnis, Arkane Intelligenz, Machtwort: Seelenstärke, Schlachtruf, Himmelszorn) werden wieder gemeldet, sobald eine passende Klasse in der Gruppe ist.
+- Buff-Erinnerungen: Neue Schalter für Flask, Essen und Klassenbuffs unter Komfort → Kampf-Tools; Anzeige passt ihre Breite an die Textlänge an.
+- Buff-Erinnerungen: Waffenöl wird gemeldet, wenn die Waffenhand (und bei zwei Waffen auch die Schildhand) keine temporäre Waffenverzauberung hat; eigener Schalter unter Kampf-Tools.
+- Buff-Erinnerungen: Kampf-Fehlanzeige behoben. In Midnight sind Aura-Daten im Kampf, in Encountern, M+ und PvP geheim; die Anzeige wertet unbekannte Werte nicht mehr als "fehlt", sondern behält den letzten bekannten Zustand von vor dem Kampf bei.
+- Buff-Erinnerungen: Mover beim Entsperren der UI (/rexui → Entsperren). Das Fenster zeigt dabei einen Beispieltext und lässt sich frei verschieben; die Position wird im Profil gespeichert.
+- Resource Bar entfernt: Die zentrale Ressourcenleiste ist über die Unitframes abgedeckt; Modul, Schalter und gespeicherte Einstellungen wurden entfernt.
+
+RexUI 4.5.4
+- ActionBars: Sichtbarkeits-Presets, Buttons pro Reihe, Hotkey/Stapel, Global Fade, Kopieren / auf alle Bars.
+- Nameplates: Friendly Name-only, Fokus nicht abdunkeln, Absorb-Overlay, Execute-Glow.
+- Neu: Buff-Erinnerungen, Resource Bar, Cooldown-Manager-Skin (Komfort → Kampf-Tools).
+- P0: Native Button Dirty-Queue, eine UpdateBar-API, Modul-Lebenszyklus, /rexperf.
+- Doppelte AB:UpdateBar-Definition entfernt; eine öffentliche API mit EnsureBar, ApplyBarLayout, ApplyBarVisibility, ApplyButtonStyle und RefreshBarState.
+- Einheitlicher Modul-Lebenszyklus (Initialize/Enable/Disable/ApplyProfile/Shutdown) und ActionBars-Registrierung.
+- Nameplate-Fallbackwerte (Breite, Healthhöhe, Zielskala, Non-Target-Alpha) an Database-Schema angeglichen.
+- Neuer optionaler Messmodus /rexperf (standardmäßig vollständig aus).
+
+RexUI 4.5.3
+- Klick-Feedback der Actionbuttons reagiert sofort und verdunkelt Icons nicht mehr doppelt.
+- Flyouts öffnen nach dem Verschieben automatisch in die freie Bildschirmrichtung.
+- Flyout-Abstände passen sich zuverlässig an geänderte Button-Größen an.
+- Mouseover-Leisten bleiben beim Wechsel vom Button in ein geöffnetes Flyout sichtbar und blenden danach sauber aus.
+- Bestehende Actionbar-, PetBar-, Mover- und Tastenbelegungsfunktionen bleiben unverändert.
+
+RexUI 4.5.0
+- PetBar wechselt wieder zuverlässig zwischen horizontaler und vertikaler Ausrichtung.
+- PetBar-Mover passt Größe und Form sofort an und ermöglicht freie Positionierung.
+- Der Mover wird beim Sperren vollständig ausgeblendet; PetBar-Icons bleiben klar sichtbar.
+- Gelbe Glow- und Zauberrahmen für Tier heilen und Tier wiederbeleben wurden abgeschaltet.
+- Aktive Pet-Befehle sind wie bei ElvUI klar aufgehellt; der aktive Angriff pulsiert rot.
+- Der weiße Statusrahmen für Helfen, Defensiv und Passiv bleibt im Kampf sichtbar.
+- PetBar-Sichtbarkeit läuft jetzt sicher wie bei ElvUI; Auf-/Absitzen und Kampf verändern weder Position noch Layout.
+- PetBar-Mover repariert, ohne die Mover anderer Actionbars oder Funktionen zu verändern.
+
+RexUI 4.4.9
+- Actionbars nutzen LibActionButton aus ElvUI 15.26 als alleinige Quelle für Cooldowns, Benutzbarkeit und häufige Kampfereignisse.
+- ElvUI-Zielmarkierung und Zauber-Klickeffekte sind vollständig aktiviert.
+- Selbst-, Fokus- und Mouseover-Casts verwenden dieselben sicheren Attribute wie ElvUI.
+- Doppelte Updates wurden entfernt; Paging, Klickmodus, Flyouts, Pet-, Haltungs- und Fahrzeugleisten bleiben geschützt und synchron.
+
+RexUI 4.4.8
+- Actionbar-Logik auf den Stand von ElvUI 15.26 / LibActionButton 1.0 r155 aktualisiert und gegen Addon-Konflikte isoliert.
+- Benutzbarkeit, Reichweite, Ressourcen, Cooldowns, neue Fähigkeiten und unterstützter Kampf werden wieder zuverlässig aktualisiert.
+- Klickverhalten folgt wieder der WoW-Einstellung; RexUI-Style, Größen und Helligkeit bleiben unverändert.
+
+RexUI 4.4.7
+- Actionbars verwenden einheitliche Icon-Helligkeit, direkte Klickreaktion und korrekt eingepasste Icons.
+
+RexUI 4.4.6-eui-final-actionbars
+- EUI-Helligkeit bleibt erhalten; die Icons verwenden wieder den korrekten RexUI-Rahmenabstand und passen vollständig in ihre Buttons.
+
+RexUI 4.4.6-eui-uniform-actionbars
+- Bar 1 und alle weiteren Actionbar-Icons bleiben einheitlich in voller Helligkeit; RexUI färbt unbenutzbare, ressourcenarme oder außer Reichweite liegende Aktionen nicht mehr dunkel.
+
+RexUI 4.4.6-eui-exact-actionbars
+- Actionbar-Helligkeit, Icon-Zoom, Slot-Hintergrund, Rahmen, Cooldown-Swipe und Benutzbarkeitsfarben entsprechen den EUI-Standardwerten.
+- RexUIs zusätzliche Reichweitenfärbung ist deaktiviert, damit keine zweite Helligkeitslogik die Icons überschreibt.
+
+RexUI 4.4.6-eui-actionbar-tuning
+- Aktionsbuttons lösen wie bei der EUI-Referenz standardmäßig bereits beim Drücken aus; beide Klickphasen bleiben für Empower- und Hold-to-Cast-Zauber registriert.
+- Buttonzustände und Cooldowns werden gebündelt im nächsten Frame statt mit zusätzlichen 30-80 ms Wartezeit aktualisiert.
+- Das Klick-Overlay verschwindet beim Loslassen sofort und die Benutzbarkeitsfarbe wird ohne Extra-Timer aktualisiert.
+- Hintergrund, Rahmen und nicht benutzbare Icons sind heller abgestimmt, während benutzbare Icons weiterhin unverfälscht weiß dargestellt werden.
+
+RexUI 4.4.6
+- Aktionsleisten-Icons werden bei Reichweite, Ressourcen und Benutzbarkeit nicht mehr abwechselnd von RexUI und LibActionButton mit unterschiedlichen Farben gezeichnet.
+- LibActionButton verwendet jetzt einheitlich die RexUI-Farben und behält den vorhandenen Benutzbarkeits-Fallback für passende Begleiterfähigkeiten auf normalen Aktionsleisten.
+- ACTIONBAR_UPDATE_STATE aktualisiert nur noch den aktiven Buttonzustand statt alle Texturen und Overlays vollständig neu aufzubauen.
+- Unveränderte Pet- und Haltungsleisten-Layouts werden bei reinen Cooldown- oder Statusupdates nicht mehr gelöscht und neu verankert.
+
+RexUI 4.4.5
+- Die linke Chat-Seitenleiste ordnet alle aktivierten RexUI-Buttons wieder korrekt und als vertikal zentrierte Gruppe an.
+- Der Scroll-Button verwendet keinen abweichenden unteren Anker mehr; dadurch bleiben die Abstände auch bei ausgeblendeten Buttons und unterschiedlichen Chat-Höhen gleichmäßig.
+- Unitframe- und Debuff-Mover vermeiden unter WoW 12 jede Rechnung mit geschützten Positions- und Größenwerten und verwenden bei Bedarf die gespeicherte RexUI-Konfiguration als sicheren Ersatz.
+- Gilden-Keys werden nach Login und neuem Gildenbeitritt automatisch verzögert abgefragt und einmal wiederholt.
+- Verspätet geladene Gilden- oder Club-Daten löschen frisch empfangene Key-Daten und den bekannten Cache nicht mehr.
+- Der Freunde-Datentext zeigt im Tooltip die Namen der online befindlichen WoW- und Battle.net-Freunde; Kontakte in anderen Spielen werden nicht als WoW-Freunde gezählt.
+- Spieler-Tooltips der RexUI-Spieler-, Ziel-, Fokus- und Gruppenframes zeigen zusätzlich den Server an.
+
+RexUI 4.4.4-test.5
+- Die RexUI-Buttons der linken Chat-Seitenleiste stehen wieder in einer gemeinsamen, korrekt sortierten und vertikal zentrierten Gruppe.
+- Der separate untere Anker des Scroll-Buttons wurde entfernt, damit die Leiste bei unterschiedlichen Chat-Höhen und ausgeblendeten Buttons nicht mehr auseinanderfällt oder überlappt.
+- Das Entsperren der Unitframe- und Debuff-Mover rechnet unter WoW 12 nicht mehr mit geschützten Positions- oder Größenwerten.
+- Falls ein nativer Aura-Container nur geschützte Werte liefert, verwendet sein Mover die gespeicherte RexUI-Größe und -Position als sicheren Ersatz.
+
+RexUI 4.4.4-test.4
+- Gilden-Keys werden nach Login und neuem Gildenbeitritt automatisch verzögert abgefragt und zur Absicherung einmal wiederholt.
+- Eine erst später verfügbare Club-ID kann frisch empfangene Key-Daten nicht mehr durch einen Wechsel der Gildenkennung löschen.
+- Ein beim Login kurzzeitig noch nicht verfügbarer Gildenname leert den bekannten Cache nicht mehr.
+- Eine außerhalb der Gilde gestartete Abfrage bleibt nach dem Gildenbeitritt nicht mehr ohne erneuten Synchronisationsversuch hängen.
+
+RexUI 4.4.4-test.3
+- Der Freunde-Datentext listet im Mouseover-Tooltip jetzt die Namen aller online befindlichen WoW- und Battle.net-Freunde auf.
+- Battle.net-Kontakte, die nur in der App oder einem anderen Blizzard-Spiel online sind, werden nicht als WoW-Freunde mitgezählt oder aufgelistet.
+- Tooltips der RexUI-Spieler-, Ziel-, Fokus- und Gruppenframes zeigen bei Spielercharakteren zusätzlich den Server an.
+- Unitframe- und Aura-Mover werden beim Entsperren nur noch absolut am UIParent verankert, damit WoW 12 keine geschützten Frame-Eigenschaften vererbt.
+
+RexUI 4.4.3
+- Neue Gilden-Keyübersicht über den Schlüssel-Button in der Chat-Seitenleiste oder mit /rexkeys.
+- Gildenmitglieder benötigen nicht zwingend RexUI: Keys können auch über BigWigs/LibKeystone sowie OpenRaid-kompatible Addons wie Details! empfangen werden.
+- Spielernamen werden in Klassenfarben dargestellt.
+- Doppelte Einträge desselben Charakters aus mehreren Datenquellen werden zusammengeführt.
+- Fenster, Zeilen und Beschriftungen wurden für eine bessere Lesbarkeit vergrößert.
+
+Technischer Hinweis:
+- Während eines laufenden Mythic+-Runs kann ein eingesteckter Schlüssel vorübergehend nicht gemeldet werden. Nach Abschluss wird der neue Schlüssel automatisch aktualisiert.
+
+Vorherige Teständerungen:
+- Spielernamen in der Gilden-Keyübersicht verwenden jetzt zuverlässig die Klassenfarben aus dem Gildenroster.
+- Doppelte Einträge desselben Charakters aus mehreren Datenquellen werden zusammengeführt.
+- Fenster, Zeilen und sämtliche Beschriftungen der Keyübersicht wurden für bessere Lesbarkeit vergrößert.
+
+RexUI 4.4.3-test.3
+- Testmodul „Gilden-Keys“ mit eigenem RexUI-Datenaustausch ergänzt.
+- Neuer Schlüssel-Button in der Chat-Seitenleiste öffnet eine sortierte Keystone-Übersicht.
+- LibOpenRaid wird mit RexUI ausgeliefert, damit auch Keystone-Daten kompatibler Fremd-Addons wie Details! empfangen werden können.
+- Eigene schlanke Empfangsbrücke deckt Installationen ohne AceComm ab.
+- Direkte Kompatibilität mit dem von BigWigs verwendeten LibKeystone-Protokoll ergänzt.
+- Gildenmitglieder mit BigWigs können ihre Keys dadurch ohne RexUI oder RexGuild übermitteln.
+- Gildenspezifischer Cache verhindert die Anzeige von Daten aus einer zuvor verlassenen Gilde.
+- Abfragen werden während des Kampfes zurückgestellt, um die Addon-Kommunikationssperre ab WoW 12 zu beachten.
+
+RexUI 4.4.2
+- Die Regler unter Frames > Spieler, Ziel, Fokus, Begleiter und Boss > Allgemein sind jetzt einheitlich ausgerichtet und überlappen nicht mehr.
+- Die Resize-Funktion des Konfigurationsfensters bleibt erhalten und startet jetzt exakt an der Mausposition, ohne das Fenster schlagartig riesig aufzuziehen.
+- Fenstergrößen werden an die aktuelle Bildschirmfläche angepasst und weiterhin gespeichert.
+- Start ist jetzt eine eigene Hauptkategorie.
+- Die Kategorie Übersicht enthält nur noch Allgemein.
+
+RexUI 4.4.1
+- Belegte Sockel im RexUI-Charakterfenster werden wieder mit dem eingesetzten Edelstein angezeigt.
+- Leere und belegte Sockel werden getrennt erkannt, damit nach dem Sockeln keine zusätzlichen falschen Quadrate entstehen.
+- Bei Gegenständen mit mehreren Sockeln bleiben nach dem Einsetzen eines Edelsteins alle weiteren freien Sockel sichtbar.
+- Einzelne und mehrere Sockelmarker werden mittig und symmetrisch am jeweiligen Ausrüstungsplatz angeordnet.
+- Die überflüssige Komfortoption für den automatischen Auktionshausfilter samt Funktion entfernt.
+
+RexUI 4.4
+- Der Lebensbalken-Hintergrund ist für Spieler, Ziel, Fokus, Begleiter und Boss inklusive Deckkraft separat einstellbar.
+- Buff-Anzeige für Ziel- und Fokus-Unitframes mit eigenen Schaltern, Größen, Reihen und X-/Y-Positionen ergänzt.
+- Buff-/Debuff-Anzeige der Unitframes auf Blizzards nativen AuraContainer umgestellt, denselben Hauptpfad wie bei den Namensplaketten; oUF bleibt als Fallback erhalten.
+- Beim Aktivieren und Zielwechsel wird sofort ein vollständiger Aura-Snapshot geladen.
+- Buffs und Debuffs verwenden getrennte Reihen; eigene Auren werden durch die oUF-Sortierung bevorzugt.
+- Allgemeine und Namensplaketten-Zurücksetzen-Dialoge erscheinen jetzt sicher vor dem RexUI-Einstellungsfenster.
+- Reaktionserkennung feindlicher und neutraler NPCs an Plater v652 angeglichen.
+- Falsche Neutralfarben bei besonderen Gegnern durch die korrekte Abfragerichtung „Einheit zu Spieler“ behoben.
+- Die Textkorrekturen aus 4.3.11 sind weiterhin enthalten.
+
+RexUI 4.3.11
+- Die Statuswörter „BEREIT“ und „ABK“ vollständig aus der Namensplaketten-Darstellung entfernt.
+- Die zugehörige, nicht mehr benötigte Option aus den Zauberleisten-Einstellungen entfernt.
+- Unterbrechbarkeit wird weiterhin über die eingestellten Zauberleistenfarben dargestellt.
+
+RexUI 4.3.10
+- Nicht darstellbaren Pfeil vor dem Zielnamen der Zauberleiste entfernt; dadurch erscheint dort kein Quadrat mehr.
+- Die gelegentlichen Statuswörter „BEREIT“ und „ABK“ rechts an Namensplaketten standardmäßig und einmalig für bestehende Profile ausgeschaltet.
+
+RexUI 4.3.9
+- Die vom Benutzer final gespeicherten Namensplaketten- und Zauberleistenwerte sind jetzt die Werkseinstellungen.
+- RexUI-Namensplaketten sind bei neuen Profilen standardmäßig aktiviert.
+- Öffentliche Testphase beendet sowie Vorschau-Hinweis und Test-Bezeichnungen entfernt.
+
+RexUI 4.3.9-beta.7
+- Alle sichtbaren englischen Begriffe der Namensplaketten- und Zauberleisten-Einstellungen ins Deutsche übersetzt.
+- Auch die Statusanzeigen der Zauberleiste verwenden jetzt „BEREIT“, „ABK“, „SCHUTZ“ und „VERSTÄRKT“.
+
+RexUI 4.3.9-beta.6
+- Namensplaketten- und Zauberleisten-Zustände direkt gegen die bereitgestellte Referenz Plater v652 geprüft.
+- Bedrohungspriorität an v652 angeglichen: kritische Warnzustände werden nicht mehr von Boss-, Miniboss-, Caster-, Elite- oder Trivialfarben überdeckt.
+- Gute Bedrohungszustände beachten weiterhin den Schalter „Bedrohungsfarben nicht überschreiben“.
+
+RexUI 4.3.9-beta.5
+- Eigene Namensplaketten-Kategorie „Zauberleisten“ mit den wichtigsten Plater-Einstellungen ergänzt.
+- Zauberleisten-Farben aus dem allgemeinen Farbtab verschoben und als Normal, Kanalisierte, Verstärkt, Wichtig, Nicht unterbrechbar, Unterbrochen, Erfolgreich und Hintergrundfarbe sortiert.
+- HEX-Farbcodes werden auch bei allen Zauberleisten-Farben live angezeigt.
+- Textur, Höhe, Zielname, Symbolseite und Symbolgröße sind direkt konfigurierbar.
+- Kanalisierte, verstärkte, wichtige, nicht unterbrechbare, unterbrochene und erfolgreiche Zauber verwenden jeweils ihren eigenen Farbzustand.
+
+RexUI 4.3.9-beta.4
+- Namensplaketten-Farben nach den Bereichen der Plater-Farbseite sortiert und entsprechend benannt.
+- HEX-Farbcodes werden direkt unter jedem Farbfeld angezeigt und während der Auswahl live aktualisiert.
+- Fehlende Farben für Neutral, Tank-Übernahme, Solo, Nicht-Tank-Aggro und Einheiten außerhalb des Kampfes ergänzt.
+- Bedrohungs-Modifikationen für Lebensbalken, Rahmen und Namen sowie Schalter für Elite, Trivial, Aggro-Blinken und Aggro-Glühen ergänzt.
+- Tank-, DPS-/Heiler- und Gegnertyp-Prioritäten an die zugehörigen Plater-Zustände angeglichen.
+
+RexUI 4.3.8
+- Das bisherige RexUI-Nameplate-System wurde vollständig entfernt, damit Blizzard-Nameplates und externe Addons wie Plater unbeeinflusst arbeiten.
+- ActionBar-Initialisierung bereinigt und unnötige doppelte Startpfade entfernt.
+- Tote bzw. veraltete ActionBar-Codepfade entfernt.
+- ZoneAbility-Initialisierung bereinigt; vorhandene Login-, World-, Zone- und Combat-Events übernehmen die Aktualisierung.
+- Technische Prüfung der Bereinigung gegen ElvUI 15.25 durchgeführt; funktionierende Secure-, Cooldown-, Overlay- und GroupFrame-Pfade bewusst unverändert gelassen.
+- Interne Profil- und Medienreste der früheren Nameplates bereinigt bzw. sicher migriert.
+
+RexUI 4.2.1
+- Mythic+ Timer: Blizzard-Scenario-Tracker wird bei aktiviertem RexUI-Timer dauerhaft ausgeblendet.
+- Behebt kurzes Aufblitzen/Flackern des originalen Blizzard-M+ Timers bei Szenario- und Kriterien-Updates.
+- Ausblenden bleibt auch bestehen, wenn Blizzard den Tracker intern erneut einblendet oder dessen Transparenz aktualisiert.
+
+RexUI 4.1.5
+- Charakterfenster: Statistikschrift klarer und besser lesbar
+- Charakterfenster: sichtbare Scrollleiste für Attribute und Abzeichen
+- Charakterfenster: Wertezeilen mit Trennlinien
+- Charakterfenster: Spezialisierung unten links auswählbar
+- Ausrüstung: vorhandene und leere Sockel direkt am Item sichtbar
+- Ausrüstung: Items können per Maus aus dem Slot aufgenommen und per Drag & Drop eingesetzt/getauscht werden
+
+RexUI 4.1.4
+
+Allgemein, Abzeichen und bessere Lesbarkeit
+
+- Ergaenzt Haltbarkeit, Lebensraub, Vermeidung, Tempo-Wertung und Bewegung.
+- Fuegt die aktuellen Aufwertungsabzeichen sowie den Katalysator hinzu.
+- Vergroessert die Schriften der Itemzeilen, Tabs, Werte und Titel.
+- Faerbt den Charakternamen im Kopfbereich automatisch in der Klassenfarbe.
+
+RexUI 4.1.3
+
+Gegenstandsstufe im rechten Kopfbereich
+
+- Zeigt die ausgeruestete Gegenstandsstufe dauerhaft links unter den drei Tabs.
+- Die Anzeige bleibt auch in Titel- und Transmogansicht sichtbar.
+
+RexUI 4.1.2
+
+Freie Charaktermitte
+
+- Verkleinert das Charaktermodell deutlich und zeigt mehr Raum um die Figur.
+- Verkuerzt und entsaettigt die Itemflaechen, damit sie den Koerper nicht verdecken.
+- Verschiebt Waffenhand und Schildhand an die unteren Aussenkanten.
+
+RexUI 4.1.1
+
+Mehr Platz fuer das Charaktermodell
+
+- Verkleinert Ausruestungsslots, Schriften und Farbverlaeufe leicht.
+- Verkuerzt die Itemzeilen und schafft eine deutlich breitere freie Mitte.
+- Zoomt das Modell etwas heraus, damit der vollstaendige Charakter sichtbar ist.
+
+RexUI 4.1
+
+Eigenstaendiges RexUI-Charakterfenster
+
+- Freies Charaktermodell in der Mitte mit Ausruestung links, rechts und unten.
+- Itemname, echte Gegenstandsstufe, Aufwertungsweg, Verzauberungen und Sockel.
+- Eigener rechter Bereich fuer Charakterwerte, Titel und Transmogrifikation.
+- Mythic+-Wertung, Name, Spezialisierung und Stufe im Kopfbereich.
+- Ruf und Abzeichen bleiben originale Blizzard-Fenster und werden ueber die
+  unteren RexUI-Tabs geoeffnet.
+
+RexUI 4.0
+
+Nameplate-Sichtbarkeit und Leistungsoptimierung
+
+- Haelt alle gegnerischen Namensplaketten bei grossen Pulls klar sichtbar.
+- Verhindert, dass aktive fremde Zauberleisten durch Ziel- oder
+  Sichtlinien-Transparenz verblassen.
+- Fuegt eine einstellbare Sichtlinien-Deckkraft hinzu; Raid- und
+  Mythic+-Standard ist 100 Prozent.
+- Hebt Ziel, Fokus, wichtige Casts und Aggro weiterhin eindeutig hervor.
+- Enthaelt die optimierten Grafikprofile fuer Raid/Mythic+, Ausgewogen und
+  Beste Grafik.
+- Verarbeitet die native Text-, Zaehler- und Reichweitenpflege jeder
+  Aktionsschaltflaeche nur noch einmal pro Wartungsdurchlauf.
+- UnitFrames und Nameplates bleiben integrierte, einzeln konfigurierbare
+  RexUI-Module.
+
+RexUI 3.2
+
+Anklickbare Namensplaketten
+
+- Verknuepft die sichtbare RexUI-Namensplakette explizit mit Blizzards
+  nativer Hit-Test-Flaeche.
+- Ein Klick auf den Lebens- oder Zauberbalken nimmt den zugehoerigen Gegner
+  jetzt zuverlaessig ins Ziel.
+- Verwendet weiterhin Blizzards geschuetztes C++-Targeting und benoetigt keine
+  unsicheren oder im Kampf blockierten OnClick-Aktionen.
+
+RexUI 3.1.9
+
+Minimap-Datentexte beim Login
+
+- Behebt eine leere Datentext-Leiste unter der Minimap direkt nach dem
+  Einloggen oder einem UI-Neuladen.
+- Aktualisiert Gilden- und Battle.net-Datentexte einmalig erneut, sobald die
+  zugehoerigen Spieldaten nach PLAYER_ENTERING_WORLD bereitstehen.
+- Verwendet beim fruehen Start eine sichere Ersatzbreite, falls die Minimap
+  ihre endgueltige Groesse noch nicht bereitstellt.
+- Stellt ausgewaehlte Datentext-Anbieter und deren Ereignisse bei Bedarf
+  automatisch wieder her.
+- Vermeidet dauerhaftes Start-Polling und fuehrt bei reinen Anzeigeupdates
+  keine geschuetzten Gildenaktionen aus.
+
+RexUI 3.1.8
+
+Raid- und Open-World-Performance
+
+- Beschleunigt Gruppen- und Raidframes durch direkte Unit-Zuordnungen statt
+  wiederholter Suchen ueber alle bis zu 45 angelegten Frames.
+- Filtert globale Unit-Ereignisse fuer Ziel, Fokus und Namensplaketten bereits
+  vor der Raidframe-Verarbeitung heraus.
+- Reduziert Lua-Speicher- und Garbage-Collector-Last durch wiederverwendete
+  Ereignistabellen und gecachte Laufzeitkonfigurationen.
+- Verarbeitet gebuendelte Lebens-, Aura-, Reichweiten- und Bedrohungsupdates
+  weiterhin kontrolliert, aber mit deutlich weniger Verwaltungsaufwand.
+- Entfernt einen doppelten Layoutdurchlauf beim Erscheinen neuer
+  Namensplaketten.
+- Erstellt Mythic+-Gegnerpunkte ausserhalb eines aktiven Schluesselsteins nicht
+  mehr vorsorglich fuer jede Open-World-Namensplakette.
+- Reduziert die Abfragefrequenz des inaktiven Mythic+-Timers.
+- Stabilisiert Mouseover und Texttransparenz der Datentexte unter der Minimap,
+  auch waehrend sich deren Werte automatisch aktualisieren.
+- Verhindert unnoetige Neuregistrierungen unveraenderter Minimap-Datentexte.
+
+RexUI 3.1.7
+
+Neue Nameplate-Konfiguration und Medienauswahl
+
+- Teilt die bisher sehr lange Nameplate-Seite in die Unterreiter Allgemein,
+  Medien, Indikatoren, Bedrohung und Farben auf.
+- Macht alle im Nameplate-Modul registrierten Balkentexturen erstmals direkt
+  ueber die RexUI-Einstellungen erreichbar.
+- Fuegt getrennte Auswahlmenues fuer Lebensbalken, Lebensbalken-Hintergrund,
+  Zauberleiste und Zauberleisten-Hintergrund hinzu.
+- Erweitert den Medienreiter um die echte Nameplate-Schriftauswahl sowie die
+  vorhandenen Zielpfeil-, Fokus- und Zielhervorhebungsmedien.
+- Ordnet Aggro-, Bedrohungs- und besondere Gegnerfarben in einem eigenen
+  Bereich an und macht weitere vorhandene Schalter leichter erreichbar.
+- Wendet Medien- und Designaenderungen sofort auf sichtbare Namensplaketten
+  an und speichert alle Werte weiterhin im aktiven Profil.
+- Entfernt wirkungslose oder doppelte Bedienelemente aus der Konfiguration.
+
+RexUI 3.1.6
+
+Datentexte, Taschen und Schadensmeter
+
+- Erweitert die Minimap-Datenleiste um frei waehlbare Hintergrund-, Rahmen-
+  und Textfarben sowie separate Transparenzregler fuer alle drei Bereiche.
+- Behaelt die gewaehlte Textfarbe auch bei automatischen Aktualisierungen von
+  FPS, Latenz, Gilde, Freunden und weiteren Datentexten dauerhaft bei.
+- Kennzeichnet alle Plaetze der Reagenzientasche mit einem vollstaendigen,
+  konfigurierbaren Slot-Rahmen nach dem bewaehrten ElvUI-Prinzip.
+- Laesst Qualitaetsfarben seltener und hoeherwertiger Gegenstaende weiterhin
+  Vorrang vor der Reagenzienfarbe haben.
+- Fuehrt ein neues Skin-System fuer den Schadensmeter ein. Der dunkle RexUI-
+  Skin ist Standard; RexUI Glas, RexUI Kompakt und RexUI Klassisch stehen als
+  weitere Presets zur Auswahl.
+- Erweitert die Skin-Regler um Fenster-, Kopfzeilen-, Balken-, Zeilen- und
+  Mouseover-Transparenz sowie frei waehlbare Farben.
+- Zeigt die Dauer des aktuellen oder gespeicherten Kampfes direkt im
+  Schadensmeter und in der Segmentauswahl an.
+- Uebernimmt den aktiven Skin auch fuer die Spieleranalyse und entfernt dort
+  alte violette Stilreste.
+- Behebt den Fehler "FontString:SetText(): Font not set" bei ausgeblendeten
+  Spaltenueberschriften des Schadensmeters.
+
+RexUI 3.1.5
+
+Gilden-Datentext Hotfix
+
+- Behebt ADDON_ACTION_BLOCKED-Meldungen beim Mouseover ueber den
+  Gilden-Datentext an der Minimap.
+- Fragt die im Kampf geschuetzte Gildennachricht nicht mehr direkt aus dem
+  Tooltip-Handler ab.
+- Speichert die Gildennachricht ausserhalb des Kampfes zwischen und
+  aktualisiert den Cache nach Kampfende automatisch.
+
+RexUI 3.1.4
+
+Actionbar Cooldown Taint Hotfix
+
+- Entfernt Eingriffe in Blizzards interne ActionButton-Registrierungslisten.
+- Behebt wiederholte SetCooldown-Fehler mit geschuetzten Cooldownwerten auf
+  den nativen Aktionsbuttons.
+- Laesst Blizzards ActionButton- und Cooldown-Verarbeitung vollstaendig unter
+  Kontrolle des Spiels, waehrend RexUIs eigene Leisten unveraendert bleiben.
+
+RexUI 3.1.3
+
+Automatische Gegner-Namensplaketten
+
+- Aktiviert beim Laden und beim Betreten der Welt automatisch Blizzards
+  Optionen fuer feindliche sowie dauerhaft sichtbare Namensplaketten.
+- Benutzer muessen V, Strg+V oder Konsolenbefehle nicht mehr selbst setzen.
+- Neue Option "Freundliche Namensplaketten anzeigen" (Standard: aus), die
+  auch freundliche NPCs, Begleiter, Waechter, Diener und Totems steuert.
+- Erzwingt die Auswahl direkt am erzeugten RexUI-Nameplate-Frame, weil
+  Blizzard einzelne wichtige oder geskriptete freundliche NPCs trotz
+  deaktivierter CVars weiterhin bereitstellen kann.
+
+RexUI 3.1.1c
+
+Nameplate Reaktion und Zielrahmen
+
+- Ersetzt die skalierte Ziel-Glow-Textur durch eine pixelgenaue Einfaerbung
+  des echten Lebensbalken-Rahmens.
+- Unterscheidet angreifbare neutrale Tiere von tatsaechlich feindlichen Units.
+- Zeigt neutrale NPCs gelb und freundliche NPCs gruen statt rot an.
+- Verwendet fuer feindliche Spieler die Klassenfarbe.
+
+RexUI 3.1.1b
+
+40-Spieler-Raid Performance
+
+- Verteilt gebuendelte Gruppenframe-Events auf kleine Render-Frame-Pakete,
+  statt bis zu 40 Unit-Updates in einem einzigen Bild abzuarbeiten.
+- Ueberspringt Updates fuer nicht sichtbare Party-/Raidframe-Varianten.
+- Erstellt auf Retail mit geschuetzten AuraContainern keine ungenutzten
+  manuellen Nameplate-Aurabuttons und UNIT_AURA-Listener mehr.
+
+RexUI 3.0.9
+
+Unitframe Aura Taint Hotfix
+
+- Behebt Lua-Taint-Fehler im oUF-Auraelement, wenn Retail secret
+  UNIT_AURA-Updatewerte fuer Ziel- oder Unitframes liefert.
+- Verhindert direkte Boolean-Tests auf secret isFullUpdate-Werte.
+- Faengt secret Aura-Slot-Zugriffe defensiv ab und blendet betroffene
+  Auraelemente aus, statt einen Lua-Fehler zu erzeugen.
+
+RexUI 3.0.8
+
+Actionbar Mouseover Hotfix
+
+- Behebt einen Lua-Fehler in den Actionbars, der beim Verlassen einer
+  Mouseover-Leiste auftreten konnte.
+- Ersetzt die nicht verfuegbare globale MouseIsOver-Abfrage durch sichere
+  Frame-Mouseover-Pruefungen fuer Leiste, Tracker und Buttons.
+- Macht verzoegerte Fade-Outs robuster, ohne C_Timer.After-Rueckgaben wie
+  cancelbare Timer-Objekte zu behandeln.
+
+RexUI 3.0.5
+
+WoW 12.1: Combat Rotation Assist
+
+- Aktualisiert die ActionButton-Bibliothek vollständig für WoW 12.1
+  (interne Revision 154).
+- Verwendet den Blizzard-AssistedCombatManager als einzigen
+  Update-Taktgeber.
+- Entfernt den parallelen RexUI-Poller und doppelte Highlight-Callbacks.
+- Aktualisiert beim Rotationswechsel nur noch den Button-Glow statt aller
+  Overlay-Elemente und verhindert dadurch Script-Timeouts im Kampf.
+- Unterstützt den dynamischen Combat-Assist-Aktionsslot vollständig.
+- Aktualisiert dessen dynamisches Zauber-Icon und den Cooldown direkt und
+  verhindert, dass RexUIs eigener Renderer das Helfer-Icon wieder ausblendet.
+- Verarbeitet den `activeAlerts`-/`activeAssist`-Lebenszyklus vollständig,
+  damit normale Proc- und Actionbar-Updates den aktiven Rotations-Helper nicht
+  unmittelbar wieder entfernen.
+
+RexUI 3.0.0
+
+Konfigurierbare Gesundheitsanzeige
+
+- Spieler-, Ziel-, Fokus- und Boss-Frames können Gesundheit wahlweise als
+  Prozentwert (100%) oder als kompakten Zahlenwert (125k) anzeigen.
+- Die Einstellung wird für jedes Unitframe separat im aktiven Profil
+  gespeichert und direkt angewendet.
+
+RexUI 2.0.10
+
+Neue Realm-Flaggen im Gruppenbrowser
+
+- Zeigt die Realm-Region beziehungsweise Realm-Sprache von Bewerbern und
+  Gruppenleitern direkt als kompakte Länderflagge an.
+- Ergänzt Spieler- und Gruppenfinder-Tooltips um Flagge und Bezeichnung.
+- Unterstützt europäische, amerikanische, lateinamerikanische,
+  brasilianische und ozeanische Realms.
+- Neue Optionen unter /rexui > Komfort > Realm-Herkunft.
+- Region kann automatisch erkannt oder manuell ausgewählt werden.
+- Anzeige für Bewerber, Gruppenleiter und Tooltips kann einzeln angepasst
+  werden.
+- Die Funktion ist direkt in RexUI enthalten; ein zusätzliches Addon ist
+  zur Laufzeit nicht erforderlich.
+RexUI 3.9
+---------
+- Introduced the integrated graphics optimizer and its three quality profiles.
+- Graphics profiles aligned with the ElvUI Retail performance guide updated for
+  WoW 12.0/12.0.1: separate raid graphics, 100% render scale, essential raid
+  spell density, projected textures enabled, and low raid environment detail.
+- Hardware-specific Graphics API and low-latency settings are deliberately left
+  to the user instead of being changed blindly.
+- Graphics profile labels clarified as Optimal for Raid & M+, Balanced, and Best
+  Graphics; the settings page now explains the currently selected profile.

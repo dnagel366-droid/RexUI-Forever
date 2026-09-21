@@ -1,0 +1,177 @@
+## Interface: 16001
+## Title: RexUI Eternal
+## Notes: RexUI Eternal for WoW Forever. Performance-focused modular UI with integrated nameplates.
+## Notes-deDE: RexUI Eternal für WoW Forever. Leistungsoptimierte modulare UI mit integrierten Namensplaketten.
+## Author: Daniel Nagel
+## Version: 1.4
+## X-Nameplates-Status: Standard
+## SavedVariables: RexUIDB
+## SavedVariablesPerCharacter: RexUICharDB
+## IconTexture: Interface\AddOns\RexUI\media\logo
+## X-oUF: RexUI_oUF
+## X-Category: Unit Frames / Action Bars / Minimap / Bags / Other
+## X-Curse-Project-ID: 1565555
+## X-Website: https://github.com/dnagel366-droid/RexUI
+
+# ------------------------------------------------------------
+# LIBS
+# ------------------------------------------------------------
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\LibCustomGlow-1.0\LibCustomGlow-1.0.lua
+Libs\LibButtonGlow-1.0\LibButtonGlow-1.0.lua
+Libs\LibActionButton-1.0\LibActionButton-1.0.lua
+Libs\LibSharedMedia-3.0\LibSharedMedia-3.0.lua
+Libs\LibDeflate\LibDeflate.lua
+Libs\oUF\oUF.xml
+
+# ------------------------------------------------------------
+# CORE
+# ------------------------------------------------------------
+Core.lua
+Localization.lua
+RexUI_Utility\PixelPerfect.lua
+RexUI_Utility\GridOverlay.lua
+RexUI_Utility\GraphicsOptimizer.lua
+RexUI_Utility\Perf.lua
+Persist.lua
+Database.lua
+Theme.lua
+Profiles.lua
+Unlock.lua
+
+# ------------------------------------------------------------
+# CONFIG
+# ------------------------------------------------------------
+RexUI_Config\Core.lua
+RexUI_Config\Window.lua
+RexUI_Config\Scroll.lua
+RexUI_Config\Widgets.lua
+RexUI_Config\Categories.lua
+RexUI_Config\Settings.lua
+
+# ------------------------------------------------------------
+# COMFORT
+# ------------------------------------------------------------
+RexUI_Comfort\Core.lua
+RexUI_Comfort\AutoRepair.lua
+RexUI_Comfort\SellJunk.lua
+RexUI_Comfort\Cinematics.lua
+RexUI_Comfort\TalkingHead.lua
+RexUI_Comfort\CombatLog.lua
+RexUI_Comfort\RealmOrigin.lua
+
+# ------------------------------------------------------------
+# ACTIONBARS
+# ------------------------------------------------------------
+
+RexUI_ActionBars\Core.lua
+
+RexUI_ActionBars\Config.lua
+RexUI_ActionBars\Styling.lua
+RexUI_ActionBars\Cooldowns.lua
+RexUI_ActionBars\Overlays.lua
+RexUI_ActionBars\Buttons.lua
+RexUI_ActionBars\QuickKeybind.lua
+RexUI_ActionBars\Layout.lua
+RexUI_ActionBars\Mouseover.lua
+
+RexUI_ActionBars\StanceBar.lua
+RexUI_ActionBars\PetBar.lua
+RexUI_ActionBars\VehicleBar.lua
+RexUI_ActionBars\ZoneAbility.lua
+
+RexUI_ActionBars\Mover.lua
+RexUI_ActionBars\States.lua
+
+# ------------------------------------------------------------
+# STATUSBARS
+# ------------------------------------------------------------
+RexUI_StatusBars\Core.lua
+
+# ------------------------------------------------------------
+# BAGS
+# ------------------------------------------------------------
+RexUI_Bags\Core.lua
+RexUI_Bags\BagBar.lua
+
+# ------------------------------------------------------------
+# MICRO MENU
+# ------------------------------------------------------------
+RexUI_MicroMenu\Core.lua
+
+# ------------------------------------------------------------
+# RAID UTILITY
+# ------------------------------------------------------------
+RexUI_RaidUtility\Core.lua
+
+# ------------------------------------------------------------
+# GROUP & RAID FRAMES
+# ------------------------------------------------------------
+RexUI_GroupFrames\Core.lua
+
+# ------------------------------------------------------------
+# MINIMAP
+# ------------------------------------------------------------
+RexUI_Minimap\DataTexts.lua
+RexUI_Minimap\Core.lua
+
+# ------------------------------------------------------------
+# UNITFRAMES
+# ------------------------------------------------------------
+RexUI_UnitFrames\Core.lua
+
+# ------------------------------------------------------------
+# NAMEPLATES
+# ------------------------------------------------------------
+RexUI_Nameplates\Init.lua
+RexUI_Nameplates\Constants.lua
+RexUI_Nameplates\Core.lua
+RexUI_Nameplates\Threat.lua
+RexUI_Nameplates\Auras.lua
+RexUI_Nameplates\Castbar.lua
+RexUI_Nameplates\Indicators.lua
+RexUI_Nameplates\BlizzardPlates.lua
+RexUI_Nameplates\ClickGeometry.lua
+RexUI_Nameplates\Slash.lua
+
+# ------------------------------------------------------------
+# QUEST TRACKER
+# ------------------------------------------------------------
+RexUI_QuestTracker\Core.lua
+
+# ------------------------------------------------------------
+# DAMAGE METER
+# ------------------------------------------------------------
+RexUI_DamageMeter\Core.lua
+
+# ------------------------------------------------------------
+# GUILD KEYSTONE OVERVIEW
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# MYTHIC+ TIMER
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# COOLDOWN MANAGER
+# ------------------------------------------------------------
+RexUI_CooldownManager\Core.lua
+
+# ------------------------------------------------------------
+# BLIZZARD SKIN
+# ------------------------------------------------------------
+RexUI_BlizzardSkin\Core.lua
+RexUI_BlizzardSkin\CharacterWindow.lua
+RexUI_BlizzardSkin\LFGQueue.lua
+RexUI_BlizzardSkin\Keybind.lua
+RexUI_BlizzardSkin\InspectSheet.lua
+RexUI_BlizzardSkin\FriendsList.lua
+RexUI_BlizzardSkin\Chat.lua
+
+# ------------------------------------------------------------
+# UI
+# ------------------------------------------------------------
+UI\Widgets.lua
+UI\WelcomeFrame.lua
+UI\Installer.lua
